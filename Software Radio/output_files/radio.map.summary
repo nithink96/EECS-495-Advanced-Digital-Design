@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Mar 18 20:36:59 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : radio
+Top-level Entity Name : radio
+Family : Cyclone IV E
+Total logic elements : 28,087
+    Total combinational functions : 28,010
+    Dedicated logic registers : 6,483
+Total registers : 6483
+Total pins : 104
+Total virtual pins : 0
+Total memory bits : 81,920
+Embedded Multiplier 9-bit elements : 532
+Total PLLs : 0

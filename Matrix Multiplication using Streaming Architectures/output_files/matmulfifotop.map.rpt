@@ -1,0 +1,880 @@
+Analysis & Synthesis report for matmulfifotop
+Mon Feb 04 17:35:48 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |matmulfifotop
+ 13. Parameter Settings for User Entity Instance: fifo:a_fifo
+ 14. Parameter Settings for User Entity Instance: fifo:b_fifo
+ 15. Parameter Settings for User Entity Instance: fifo:c_fifo
+ 16. Parameter Settings for User Entity Instance: fifo_multiply:matmulfifo
+ 17. Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult7
+ 18. Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult6
+ 19. Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult5
+ 20. Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult4
+ 21. Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult3
+ 22. Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult2
+ 23. Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult1
+ 24. Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult0
+ 25. lpm_mult Parameter Settings by Entity Instance
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Feb 04 17:35:48 2019       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; matmulfifotop                               ;
+; Top-level Entity Name              ; matmulfifotop                               ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 9,502                                       ;
+;     Total combinational functions  ; 4,734                                       ;
+;     Dedicated logic registers      ; 5,017                                       ;
+; Total registers                    ; 5017                                        ;
+; Total pins                         ; 106                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 48                                          ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F23C8      ;                    ;
+; Top-level entity name                                            ; matmulfifotop      ; matmulfifotop      ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.4%      ;
+;     Processor 3            ;   0.3%      ;
+;     Processor 4            ;   0.3%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; matmulfifotop.vhd                ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifotop.vhd               ;         ;
+; matmulfifo.vhd                   ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd                  ;         ;
+; fifo.vhd                         ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Matrix Mul FIFO/fifo.vhd                        ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf    ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc  ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc    ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc    ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc    ;         ;
+; db/mult_7dt.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf                 ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 9,502        ;
+;                                             ;              ;
+; Total combinational functions               ; 4734         ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 3626         ;
+;     -- 3 input functions                    ; 923          ;
+;     -- <=2 input functions                  ; 185          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 4289         ;
+;     -- arithmetic mode                      ; 445          ;
+;                                             ;              ;
+; Total registers                             ; 5017         ;
+;     -- Dedicated logic registers            ; 5017         ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 106          ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 48           ;
+;                                             ;              ;
+; Maximum fan-out node                        ; rd_clk~input ;
+; Maximum fan-out                             ; 4223         ;
+; Total fan-out                               ; 33608        ;
+; Average fan-out                             ; 3.36         ;
++---------------------------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                           ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name   ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+---------------+--------------+
+; |matmulfifotop                     ; 4734 (0)            ; 5017 (0)                  ; 0           ; 48           ; 0       ; 24        ; 106  ; 0            ; |matmulfifotop                                                                 ; matmulfifotop ; work         ;
+;    |fifo:a_fifo|                   ; 187 (187)           ; 297 (297)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |matmulfifotop|fifo:a_fifo                                                     ; fifo          ; work         ;
+;    |fifo:b_fifo|                   ; 187 (187)           ; 297 (297)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |matmulfifotop|fifo:b_fifo                                                     ; fifo          ; work         ;
+;    |fifo:c_fifo|                   ; 185 (185)           ; 297 (297)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |matmulfifotop|fifo:c_fifo                                                     ; fifo          ; work         ;
+;    |fifo_multiply:matmulfifo|      ; 4175 (3951)         ; 4126 (4126)               ; 0           ; 48           ; 0       ; 24        ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo                                        ; fifo_multiply ; work         ;
+;       |lpm_mult:Mult0|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult0                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult0|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult1|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult1                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult1|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult2|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult2                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult2|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult3|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult3                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult3|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult4|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult4                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult4|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult5|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult5                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult5|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult6|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult6                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult6|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult7|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult7                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult7|mult_7dt:auto_generated ; mult_7dt      ; work         ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 24          ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 48          ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 24          ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 5017  ;
+; Number of registers using Synchronous Clear  ; 24    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 57    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4888  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; fifo:c_fifo|empty                      ; 1       ;
+; fifo:a_fifo|empty                      ; 13      ;
+; fifo:b_fifo|empty                      ; 13      ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |matmulfifotop|fifo_multiply:matmulfifo|a_index[2] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |matmulfifotop|fifo_multiply:matmulfifo|b_index[4] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |matmulfifotop|fifo_multiply:matmulfifo|i[3]       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |matmulfifotop|fifo_multiply:matmulfifo|j[3]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |matmulfifotop|fifo_multiply:matmulfifo|c_din[5]   ;
+; 8:1                ; 256 bits  ; 1280 LEs      ; 1280 LEs             ; 0 LEs                  ; No         ; |matmulfifotop|fifo_multiply:matmulfifo|Mux90      ;
+; 8:1                ; 256 bits  ; 1280 LEs      ; 1280 LEs             ; 0 LEs                  ; No         ; |matmulfifotop|fifo_multiply:matmulfifo|Mux288     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |matmulfifotop ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                       ;
+; BUFFER_SIZE    ; 64    ; Signed Integer                                       ;
+; DWIDTH         ; 32    ; Signed Integer                                       ;
+; AWIDTH         ; 6     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fifo:a_fifo ;
++------------------+-------+-------------------------------+
+; Parameter Name   ; Value ; Type                          ;
++------------------+-------+-------------------------------+
+; fifo_data_width  ; 32    ; Signed Integer                ;
+; fifo_buffer_size ; 32    ; Signed Integer                ;
++------------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fifo:b_fifo ;
++------------------+-------+-------------------------------+
+; Parameter Name   ; Value ; Type                          ;
++------------------+-------+-------------------------------+
+; fifo_data_width  ; 32    ; Signed Integer                ;
+; fifo_buffer_size ; 32    ; Signed Integer                ;
++------------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fifo:c_fifo ;
++------------------+-------+-------------------------------+
+; Parameter Name   ; Value ; Type                          ;
++------------------+-------+-------------------------------+
+; fifo_data_width  ; 32    ; Signed Integer                ;
+; fifo_buffer_size ; 32    ; Signed Integer                ;
++------------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fifo_multiply:matmulfifo ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; n              ; 8     ; Signed Integer                               ;
+; dwidth         ; 32    ; Signed Integer                               ;
+; awidth         ; 6     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult7 ;
++------------------------------------------------+--------------+--------------------------+
+; Parameter Name                                 ; Value        ; Type                     ;
++------------------------------------------------+--------------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                  ;
+; LATENCY                                        ; 0            ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; USE_EAB                                        ; OFF          ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                  ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                  ;
++------------------------------------------------+--------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult6 ;
++------------------------------------------------+--------------+--------------------------+
+; Parameter Name                                 ; Value        ; Type                     ;
++------------------------------------------------+--------------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                  ;
+; LATENCY                                        ; 0            ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; USE_EAB                                        ; OFF          ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                  ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                  ;
++------------------------------------------------+--------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult5 ;
++------------------------------------------------+--------------+--------------------------+
+; Parameter Name                                 ; Value        ; Type                     ;
++------------------------------------------------+--------------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                  ;
+; LATENCY                                        ; 0            ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; USE_EAB                                        ; OFF          ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                  ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                  ;
++------------------------------------------------+--------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult4 ;
++------------------------------------------------+--------------+--------------------------+
+; Parameter Name                                 ; Value        ; Type                     ;
++------------------------------------------------+--------------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                  ;
+; LATENCY                                        ; 0            ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; USE_EAB                                        ; OFF          ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                  ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                  ;
++------------------------------------------------+--------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult3 ;
++------------------------------------------------+--------------+--------------------------+
+; Parameter Name                                 ; Value        ; Type                     ;
++------------------------------------------------+--------------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                  ;
+; LATENCY                                        ; 0            ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; USE_EAB                                        ; OFF          ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                  ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                  ;
++------------------------------------------------+--------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult2 ;
++------------------------------------------------+--------------+--------------------------+
+; Parameter Name                                 ; Value        ; Type                     ;
++------------------------------------------------+--------------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                  ;
+; LATENCY                                        ; 0            ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; USE_EAB                                        ; OFF          ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                  ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                  ;
++------------------------------------------------+--------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+--------------------------+
+; Parameter Name                                 ; Value        ; Type                     ;
++------------------------------------------------+--------------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                  ;
+; LATENCY                                        ; 0            ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; USE_EAB                                        ; OFF          ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                  ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                  ;
++------------------------------------------------+--------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: fifo_multiply:matmulfifo|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+--------------------------+
+; Parameter Name                                 ; Value        ; Type                     ;
++------------------------------------------------+--------------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                  ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                  ;
+; LATENCY                                        ; 0            ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; USE_EAB                                        ; OFF          ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                  ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                  ;
++------------------------------------------------+--------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                  ;
++---------------------------------------+-----------------------------------------+
+; Name                                  ; Value                                   ;
++---------------------------------------+-----------------------------------------+
+; Number of entity instances            ; 8                                       ;
+; Entity Instance                       ; fifo_multiply:matmulfifo|lpm_mult:Mult7 ;
+;     -- LPM_WIDTHA                     ; 32                                      ;
+;     -- LPM_WIDTHB                     ; 32                                      ;
+;     -- LPM_WIDTHP                     ; 64                                      ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                      ;
+;     -- USE_EAB                        ; OFF                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                      ;
+; Entity Instance                       ; fifo_multiply:matmulfifo|lpm_mult:Mult6 ;
+;     -- LPM_WIDTHA                     ; 32                                      ;
+;     -- LPM_WIDTHB                     ; 32                                      ;
+;     -- LPM_WIDTHP                     ; 64                                      ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                      ;
+;     -- USE_EAB                        ; OFF                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                      ;
+; Entity Instance                       ; fifo_multiply:matmulfifo|lpm_mult:Mult5 ;
+;     -- LPM_WIDTHA                     ; 32                                      ;
+;     -- LPM_WIDTHB                     ; 32                                      ;
+;     -- LPM_WIDTHP                     ; 64                                      ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                      ;
+;     -- USE_EAB                        ; OFF                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                      ;
+; Entity Instance                       ; fifo_multiply:matmulfifo|lpm_mult:Mult4 ;
+;     -- LPM_WIDTHA                     ; 32                                      ;
+;     -- LPM_WIDTHB                     ; 32                                      ;
+;     -- LPM_WIDTHP                     ; 64                                      ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                      ;
+;     -- USE_EAB                        ; OFF                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                      ;
+; Entity Instance                       ; fifo_multiply:matmulfifo|lpm_mult:Mult3 ;
+;     -- LPM_WIDTHA                     ; 32                                      ;
+;     -- LPM_WIDTHB                     ; 32                                      ;
+;     -- LPM_WIDTHP                     ; 64                                      ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                      ;
+;     -- USE_EAB                        ; OFF                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                      ;
+; Entity Instance                       ; fifo_multiply:matmulfifo|lpm_mult:Mult2 ;
+;     -- LPM_WIDTHA                     ; 32                                      ;
+;     -- LPM_WIDTHB                     ; 32                                      ;
+;     -- LPM_WIDTHP                     ; 64                                      ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                      ;
+;     -- USE_EAB                        ; OFF                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                      ;
+; Entity Instance                       ; fifo_multiply:matmulfifo|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 32                                      ;
+;     -- LPM_WIDTHB                     ; 32                                      ;
+;     -- LPM_WIDTHP                     ; 64                                      ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                      ;
+;     -- USE_EAB                        ; OFF                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                      ;
+; Entity Instance                       ; fifo_multiply:matmulfifo|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32                                      ;
+;     -- LPM_WIDTHB                     ; 32                                      ;
+;     -- LPM_WIDTHP                     ; 64                                      ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                      ;
+;     -- USE_EAB                        ; OFF                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                      ;
++---------------------------------------+-----------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 106                         ;
+; cycloneiii_ff         ; 5017                        ;
+;     CLR               ; 33                          ;
+;     ENA               ; 4864                        ;
+;     ENA CLR SCLR      ; 24                          ;
+;     plain             ; 96                          ;
+; cycloneiii_lcell_comb ; 4735                        ;
+;     arith             ; 445                         ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 425                         ;
+;     normal            ; 4290                        ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 161                         ;
+;         3 data inputs ; 498                         ;
+;         4 data inputs ; 3626                        ;
+; cycloneiii_mac_mult   ; 24                          ;
+; cycloneiii_mac_out    ; 24                          ;
+;                       ;                             ;
+; Max LUT depth         ; 8.30                        ;
+; Average LUT depth     ; 4.11                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:14     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon Feb 04 17:35:20 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off matmulfifotop -c matmulfifotop
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file matmulfifotop.vhd
+    Info (12022): Found design unit 1: matmulfifotop-behavioral File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifotop.vhd Line: 35
+    Info (12023): Found entity 1: matmulfifotop File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifotop.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file matmulfifo.vhd
+    Info (12022): Found design unit 1: fifo_multiply-behavioral File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 33
+    Info (12023): Found entity 1: fifo_multiply File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file fifo.vhd
+    Info (12022): Found design unit 1: fifo-behavior File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/fifo.vhd Line: 29
+    Info (12023): Found entity 1: fifo File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/fifo.vhd Line: 8
+Info (12127): Elaborating entity "matmulfifotop" for the top level hierarchy
+Info (12128): Elaborating entity "fifo" for hierarchy "fifo:a_fifo" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifotop.vhd Line: 95
+Info (12128): Elaborating entity "fifo_multiply" for hierarchy "fifo_multiply:matmulfifo" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifotop.vhd Line: 137
+Info (276014): Found 3 instances of uninferred RAM logic
+    Info (276004): RAM logic "fifo:c_fifo|fifo_buf" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/fifo.vhd Line: 109
+    Info (276004): RAM logic "fifo:a_fifo|fifo_buf" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/fifo.vhd Line: 109
+    Info (276004): RAM logic "fifo:b_fifo|fifo_buf" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/fifo.vhd Line: 109
+Info (278001): Inferred 8 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "fifo_multiply:matmulfifo|Mult7" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 153
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "fifo_multiply:matmulfifo|Mult6" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 153
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "fifo_multiply:matmulfifo|Mult5" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 153
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "fifo_multiply:matmulfifo|Mult4" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 153
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "fifo_multiply:matmulfifo|Mult3" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 153
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "fifo_multiply:matmulfifo|Mult2" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 153
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "fifo_multiply:matmulfifo|Mult1" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 153
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "fifo_multiply:matmulfifo|Mult0" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 153
+Info (12130): Elaborated megafunction instantiation "fifo_multiply:matmulfifo|lpm_mult:Mult7" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 153
+Info (12133): Instantiated megafunction "fifo_multiply:matmulfifo|lpm_mult:Mult7" with the following parameter: File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/matmulfifo.vhd Line: 153
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_WIDTHR" = "64"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_7dt.tdf
+    Info (12023): Found entity 1: mult_7dt File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 30
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following DSP element node(s):
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult0|mult_7dt:auto_generated|mac_mult7" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 66
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult0|mult_7dt:auto_generated|mac_out8" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 90
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult1|mult_7dt:auto_generated|mac_mult7" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 66
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult1|mult_7dt:auto_generated|mac_out8" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 90
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult2|mult_7dt:auto_generated|mac_mult7" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 66
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult2|mult_7dt:auto_generated|mac_out8" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 90
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult3|mult_7dt:auto_generated|mac_mult7" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 66
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult3|mult_7dt:auto_generated|mac_out8" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 90
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult4|mult_7dt:auto_generated|mac_mult7" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 66
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult4|mult_7dt:auto_generated|mac_out8" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 90
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult5|mult_7dt:auto_generated|mac_mult7" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 66
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult5|mult_7dt:auto_generated|mac_out8" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 90
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult6|mult_7dt:auto_generated|mac_mult7" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 66
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult6|mult_7dt:auto_generated|mac_out8" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 90
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult7|mult_7dt:auto_generated|mac_mult7" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 66
+        Warning (14320): Synthesized away node "fifo_multiply:matmulfifo|lpm_mult:Mult7|mult_7dt:auto_generated|mac_out8" File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/db/mult_7dt.tdf Line: 90
+Info (13014): Ignored 672 buffer(s)
+    Info (13019): Ignored 672 SOFT buffer(s)
+Info (13000): Registers with preset signals will power-up high File: C:/intelFPGA_lite/18.1/Matrix Mul FIFO/fifo.vhd Line: 25
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 9764 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 70 input pins
+    Info (21059): Implemented 36 output pins
+    Info (21061): Implemented 9610 logic cells
+    Info (21062): Implemented 48 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4874 megabytes
+    Info: Processing ended: Mon Feb 04 17:35:48 2019
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:40
+
+

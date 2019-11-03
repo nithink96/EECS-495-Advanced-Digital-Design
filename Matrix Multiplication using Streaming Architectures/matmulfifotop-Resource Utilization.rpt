@@ -1,0 +1,62 @@
+Resource Utilization by Entity report for matmulfifotop
+Mon Feb 04 08:51:18 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Resource Utilization by Entity
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                           ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name   ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+---------------+--------------+
+; |matmulfifotop                     ; 4734 (0)            ; 5017 (0)                  ; 0           ; 48           ; 0       ; 24        ; 106  ; 0            ; |matmulfifotop                                                                 ; matmulfifotop ; work         ;
+;    |fifo:a_fifo|                   ; 187 (187)           ; 297 (297)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |matmulfifotop|fifo:a_fifo                                                     ; fifo          ; work         ;
+;    |fifo:b_fifo|                   ; 187 (187)           ; 297 (297)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |matmulfifotop|fifo:b_fifo                                                     ; fifo          ; work         ;
+;    |fifo:c_fifo|                   ; 185 (185)           ; 297 (297)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |matmulfifotop|fifo:c_fifo                                                     ; fifo          ; work         ;
+;    |fifo_multiply:matmulfifo|      ; 4175 (3951)         ; 4126 (4126)               ; 0           ; 48           ; 0       ; 24        ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo                                        ; fifo_multiply ; work         ;
+;       |lpm_mult:Mult0|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult0                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult0|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult1|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult1                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult1|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult2|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult2                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult2|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult3|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult3                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult3|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult4|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult4                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult4|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult5|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult5                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult5|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult6|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult6                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult6|mult_7dt:auto_generated ; mult_7dt      ; work         ;
+;       |lpm_mult:Mult7|             ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult7                         ; lpm_mult      ; work         ;
+;          |mult_7dt:auto_generated| ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |matmulfifotop|fifo_multiply:matmulfifo|lpm_mult:Mult7|mult_7dt:auto_generated ; mult_7dt      ; work         ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
