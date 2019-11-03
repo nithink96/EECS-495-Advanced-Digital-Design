@@ -1,0 +1,54 @@
+Flow Summary report for Canny_Edge_Detection
+Tue Feb 12 22:07:27 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Tue Feb 12 22:03:11 2019       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; Canny_Edge_Detection                        ;
+; Top-level Entity Name              ; Canny_Edge_Detection                        ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE115F29C8                               ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 12,181                                      ;
+;     Total combinational functions  ; 12,181                                      ;
+;     Dedicated logic registers      ; 11,652                                      ;
+; Total registers                    ; 11652                                       ;
+; Total pins                         ; 38                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 640                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+

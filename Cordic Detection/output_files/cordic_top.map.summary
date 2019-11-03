@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Mar 02 16:27:33 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : cordic_top
+Top-level Entity Name : cordic_top
+Family : Cyclone IV E
+Total logic elements : 3,439
+    Total combinational functions : 3,439
+    Dedicated logic registers : 188
+Total registers : 188
+Total pins : 134
+Total virtual pins : 0
+Total memory bits : 2,048
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

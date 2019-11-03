@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Feb 12 22:03:11 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Canny_Edge_Detection
+Top-level Entity Name : Canny_Edge_Detection
+Family : Cyclone IV E
+Total logic elements : 12,181
+    Total combinational functions : 12,181
+    Dedicated logic registers : 11,652
+Total registers : 11652
+Total pins : 38
+Total virtual pins : 0
+Total memory bits : 640
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

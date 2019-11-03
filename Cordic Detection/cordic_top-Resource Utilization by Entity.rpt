@@ -1,0 +1,65 @@
+Resource Utilization by Entity report for cordic_top
+Mon Mar 04 00:33:02 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Resource Utilization by Entity
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                           ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+-----------------+--------------+
+; |cordic_top                               ; 3439 (0)            ; 188 (0)                   ; 2048        ; 0            ; 0       ; 0         ; 134  ; 0            ; |cordic_top                                                                           ; cordic_top      ; work         ;
+;    |cordic:cordic_main|                   ; 3392 (341)          ; 162 (162)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main                                                        ; cordic          ; work         ;
+;       |cordic_stage:\gen:10:l1|           ; 204 (204)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:10:l1                                ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:11:l1|           ; 202 (202)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:11:l1                                ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:12:l1|           ; 200 (200)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:12:l1                                ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:13:l1|           ; 198 (198)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:13:l1                                ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:14:l1|           ; 100 (100)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:14:l1                                ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:1:l1|            ; 221 (221)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:1:l1                                 ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:2:l1|            ; 220 (220)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:2:l1                                 ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:3:l1|            ; 218 (218)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:3:l1                                 ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:4:l1|            ; 216 (216)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:4:l1                                 ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:5:l1|            ; 214 (214)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:5:l1                                 ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:6:l1|            ; 212 (212)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:6:l1                                 ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:7:l1|            ; 210 (210)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:7:l1                                 ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:8:l1|            ; 208 (208)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:8:l1                                 ; cordic_stage    ; work         ;
+;       |cordic_stage:\gen:9:l1|            ; 206 (206)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:\gen:9:l1                                 ; cordic_stage    ; work         ;
+;       |cordic_stage:l0|                   ; 222 (222)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|cordic:cordic_main|cordic_stage:l0                                        ; cordic_stage    ; work         ;
+;    |fifo:cosine_fifo|                     ; 19 (19)             ; 13 (13)                   ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|fifo:cosine_fifo                                                          ; fifo            ; work         ;
+;       |altsyncram:fifo_buf_rtl_0|         ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|fifo:cosine_fifo|altsyncram:fifo_buf_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_esg1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|fifo:cosine_fifo|altsyncram:fifo_buf_rtl_0|altsyncram_esg1:auto_generated ; altsyncram_esg1 ; work         ;
+;    |fifo:in_fifo|                         ; 22 (22)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|fifo:in_fifo                                                              ; fifo            ; work         ;
+;    |fifo:sin_fifo|                        ; 6 (6)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|fifo:sin_fifo                                                             ; fifo            ; work         ;
+;       |altsyncram:fifo_buf_rtl_0|         ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|fifo:sin_fifo|altsyncram:fifo_buf_rtl_0                                   ; altsyncram      ; work         ;
+;          |altsyncram_esg1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cordic_top|fifo:sin_fifo|altsyncram:fifo_buf_rtl_0|altsyncram_esg1:auto_generated    ; altsyncram_esg1 ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
